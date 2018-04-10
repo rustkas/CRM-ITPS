@@ -1,0 +1,42 @@
+{% extends 'AdminBundle:security:base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/admin/css/jquery-ui.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/admin/css/jquery-ui-timepicker-addon.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/admin/css/jquery.fancybox.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('/bundles/admin/js/jquery.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/jquery.serializejson.min.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/jquery-ui-timepicker-addon.min.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/jquery.ui.datepicker-ru.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/jquery-ui-timepicker-ru.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/jquery.simplemodal.min.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/jquery.fixedheadertable.min.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/panelwk.js') }}"></script>
+    <script src="{{ asset('/bundles/admin/js/admins.js') }}"></script>
+{% endblock %}
+
+{% block topmenu %}
+<div id="top" style="position: relative;">
+<ul class="tmenu">
+{% set current_page = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+{% for item in menutop %}
+{% set pth_page = [item.path,item.page]|join %}
+{% if(pth_page == current_page) %}
+<li><a href="{{ pth_page }}" class="selects">{{ item.name }}</a></li>
+{% else %}
+<li><a href="{{ pth_page }}">{{ item.name }}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+    <div class="topinfo" style="position: absolute; right: 4px; top: 1px; width: 250px;">
+        <div style="width: 150px; cursor: default; text-overflow: ellipsis;" unselectable="on" title="{{ usinfo.group.name }}">{{ usinfo.descr }}</div>
+        <div style="width: 60px; margin-left: 4px; cursor: pointer; text-align: right; font-weight: bold;" unselectable="on" id="ctime" title="6 ноября 2016г.">00:26:00</div>
+    </div>
+</div>
+{% endblock %}

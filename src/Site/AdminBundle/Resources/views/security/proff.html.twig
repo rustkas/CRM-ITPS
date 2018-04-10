@@ -1,0 +1,25 @@
+{% extends 'AdminBundle:security:layout.html.twig' %}
+
+
+{% block body %}
+    <div class="boxsh firstbg" id="fcnt">
+        <div class="homepg" id="functpg">
+
+
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block jsonload %}
+<script>
+    $(document).ready(function(){
+        basepath = '{{ stpage }}uploads';
+        var hdt = $(document).height();
+        var bdwh = hdt-120;
+        $('#fcnt').css('min-height',bdwh+'px');
+        initpanel("","{{ statblk }}");
+    });
+</script>
+{% endblock %}

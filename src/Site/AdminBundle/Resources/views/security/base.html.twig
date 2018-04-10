@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Система Управления</title>
+<link rel="stylesheet" type="text/css" href="{{ asset('/bundles/admin/css/bootstrap.min.css') }}">
+{% block stylesheets %}
+{% endblock %}
+<link rel="stylesheet" type="text/css" href="{{ asset('/bundles/admin/css/style.css') }}">
+{% block modstylesheets %}
+{% endblock %}
+<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="shell">
+{% block topmenu %}
+
+{% endblock %}
+</div>
+</div>
+
+<div class="content">
+<div class="cl">&nbsp;</div>
+<div class="shell">
+<div class="main">
+
+
+{% block body %}
+
+
+{% endblock %}
+
+
+</div>
+</div>
+<div class="cl">&nbsp;</div>
+</div>
+
+<div class="footer">
+<div class="shell">
+<div class="footst futts">
+<div class="inlblkf" style="position: absolute; left: 1px;">© 2016 - Zevs5.Co "Система Управления" </div><div class="inlblkf" style="position: absolute; right: 1px;">Разработано <a href="http://www.zevs5.ru" target="_blank" title="">Zevs5.Co</a></div>
+</div>
+</div>
+</div>
+</div>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+{% block javascripts %}
+{% endblock %}
+{% block jsonload %}
+{% endblock %}       
+    </body>
+</html>

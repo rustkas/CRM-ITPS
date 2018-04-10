@@ -1,0 +1,4 @@
+tbl += '<td style="width: 45px; padding: 5px; vertical-align: top;">';
+tbl += '<div style="text-align: left; padding-left: 5px; padding-right: 5px;"><img src="/bundles/admin/img/up.png" class="btn btn-smalls" style="width: 32px; height: 32px; cursor: pointer;" alt="вверх" title="Вверх" onclick="change_sortsblk(' + objs[pg].id + ',' + objs[pg].pgid + ',\'up\');" /></div>';
+tbl += '<div style="text-align: left; padding-left: 5px; padding-right: 5px;"><img src="/bundles/admin/img/down.png" class="btn btn-smalls" style="width: 32px; height: 32px; cursor: pointer;" alt="вниз" title="Вниз" onclick="change_sortsblk(' + objs[pg].id + ',' + objs[pg].pgid + ',\'down\');" /></div>';
+tbl += '</td>';

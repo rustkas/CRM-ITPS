@@ -1,0 +1,31 @@
+{% extends 'AdminBundle:security:layout.html.twig' %}
+
+
+{% block body %}
+    <div class="boxsh firstbg" id="topcnt" style="margin-top: 20px; margin-bottom: 10px;">
+        <div class="homepg">
+            <div class="pcl-big" style="margin: 0 auto; text-align: center; line-height: 70px;" unselectable=on>Действующие разделы системы</div>
+        </div>
+    </div>
+    <div class="boxsh firstbg" id="fcnt">
+        <div class="homepg" id="functpg">
+
+
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block jsonload %}
+    <script>
+        $(document).ready(function() {
+            basepath = '{{ stpage }}uploads';
+            var hdt = $(document).height();
+            var bdwh = hdt - 230;
+            $('#topcnt').css('min-height', '100px');
+            $('#fcnt').css('min-height', bdwh + 'px');
+            initpanel("", "{{ statblk }}");
+        });
+    </script>
+{% endblock %}

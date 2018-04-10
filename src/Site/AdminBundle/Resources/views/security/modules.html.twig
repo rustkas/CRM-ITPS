@@ -1,0 +1,43 @@
+{% extends 'AdminBundle:security:layout.html.twig' %}
+
+{% block modstylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset(cssres) }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset(jsres) }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="boxsh firstbg" id="modfrm">
+        <div class="pgmenus" id="pgmenu">
+            <div style="position: relative;">
+                <div style="max-width: 780px;">
+                    <ul class="fmpg" id="fmpgid" style="min-height: 52px;">
+
+                    </ul>
+                </div>
+                <div style="position: absolute; right: 5px; top: 10px; width: 300px;" id="findfrm"></div>
+            </div>
+        </div>
+        <div class="homepg" id="functpg">
+
+
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block jsonload %}
+<script>
+    $(document).ready(function(){
+        basepath = '{{ stpage }}uploads';
+        var hdt = $(document).height();
+        var bdwh = hdt-120;
+        $('#modfrm').css('min-height',bdwh+'px');
+        initpanel("{{ statblk }}","");
+    });
+</script>
+{% endblock %}

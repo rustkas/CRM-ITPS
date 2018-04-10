@@ -1,0 +1,8 @@
+security:
+    encoders:
+        Site\AdminBundle\Entity\Admins:
+                  id: app.mysql_password_encoder
+
+    providers:
+          sites:
+              id: app.site_user_provider

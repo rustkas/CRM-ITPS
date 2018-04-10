@@ -1,0 +1,57 @@
+{% extends 'AdminBundle:security:layout.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset('/bundles/admin/css/jquery.fancybox.css') }}">
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('/bundles/admin/js/jquery.fancybox.js') }}"></script>
+<script src="{{ asset('/bundles/admin/js/ckeditor/ckeditor.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="boxsh firstbg" id="fcnt">
+        <div class="pgmenus" id="pgmenu">
+            <div style="position: relative;">
+                <div style="max-width: 780px;">
+                    <ul class="fmpg" id="fmpgid">
+                        {% set selspg = 0 %}
+                        {% for fpg in lmenu %}
+                            {% if(selspg == 0) %}
+                                {% set selspg = 1 %}
+                                <li>
+                                    <div id="{{ statblk }}|{{ fpg.page }}" class="pgsel" unselectable=on>{{ fpg.name }}</div>
+                                </li>
+
+                            {% else %}
+                                <li>
+                                    <div id="{{ statblk }}|{{ fpg.page }}" unselectable=on>{{ fpg.name }}</div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div style="position: absolute; right: 5px; top: 10px; width: 300px;" id="findfrm"></div>
+            </div>
+        </div>
+        <div class="homepg" id="functpg">
+
+
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block jsonload %}
+<script>
+    $(document).ready(function(){
+        basepath = '{{ stpage }}uploads';
+        var hdt = $(document).height();
+        var bdwh = hdt-120;
+        $.datepicker.setDefaults($.datepicker.regional['ru']);
+        $('#fcnt').css('min-height',bdwh+'px');
+        initpanel("","{{ statblk }}");
+    });
+</script>
+{% endblock %}

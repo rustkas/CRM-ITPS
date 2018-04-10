@@ -1,0 +1,3 @@
+panel:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /

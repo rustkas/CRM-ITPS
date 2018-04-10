@@ -1,0 +1,33 @@
+panel_homepage:
+    path:     /
+    defaults: { _controller: AdminBundle:Admins:admins }
+    requirements:
+        methods: GET, POST
+
+login:
+    path:     /login
+    defaults: { _controller: AdminBundle:Admins:login }
+
+login_check:
+    path:  /login_check
+
+logout:
+    path:   /logout
+
+panel_proff:
+    path:     /proff
+    defaults: { _controller: AdminBundle:Admins:proff }
+    requirements:
+        methods: GET, POST
+
+panel_modules:
+    path:     /modules/{mods}/
+    defaults: { _controller: AdminBundle:Admins:moduls }
+    requirements:
+        methods: GET, POST
+
+panel_pages:
+    path:     /{page}
+    defaults: { _controller: AdminBundle:Admins:pages }
+    requirements:
+        methods: GET, POST
